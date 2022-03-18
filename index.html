@@ -685,7 +685,35 @@ font-size: 2vh;
   left:5%;
 }
 
+.fullimgcanopop{
+  width:95%;
+  height:50%; 
+  position: absolute;
+  border:1px solid;
+  left:2%;
+  top:5%;
+  overflow: scroll;
+  display: none;
+}
+#kksimg{
+  width: 100%;
+  height:100%;
+  position: absolute;
+}
 
+#kksimg2{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left:110%;
+}
+
+#kksimg3{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left:220%;
+}
 </style>
 <meta name="google-site-verification" content="Zx11haJCTSt8_GNFokbwsR4oLth_db_d_IyO8FkJKcU" />
   <!-- Custom Styles -->
@@ -785,6 +813,11 @@ font-size: 2vh;
     <div class="fa fa-chevron-left"style="font-size:3vh; position: absolute;top:5vh;left:3vh;"onclick="document.getElementById('buycameraul').style.display='none'"></div>
     
   </ul>
+  <div class="fullimgcanopop">
+<img id="kksimg">
+<img id="kksimg2">
+<img id="kksimg3">
+  </div>
   <!-- Project -->
   <script>
 const firebaseConfig = {
@@ -1033,11 +1066,7 @@ function shipog(){
 
 
 function nx(){
-  if(titleinp.value.length<3){
-    alert("Please Enter Atleast 3words")
-  }else{
-    document.querySelector(".fullimg").style.display="flex"
-  }
+ 
 }
 
 function yeh(){
@@ -1049,7 +1078,9 @@ function yeh(){
    var pogimg=document.getElementById("myImg").src
      var pogimg2=document.getElementById("myImg2").src
        var pogimg3=document.getElementById("myImg3").src
-     firebase.database().ref("allcam").push().set({
+    
+    var db=firebase.database()
+       db.ref("allcam").push().set({
        "name":name,
        "price":price,
        "cam":cam,
@@ -1058,6 +1089,8 @@ function yeh(){
        "camimg2":pogimg2,
        "camimg3":pogimg3
      })
+
+
    document.querySelector(".fullimg").style.display="none"
    document.querySelector(".fullsell").style.display="none"
    document.querySelector(".done-box").style.display="flex"
@@ -1118,15 +1151,13 @@ function shpog(self){
   
   var selSr3 = self.parentElement.querySelector('.srtxt3').innerHTML
   
-  selImg.src=selSr
+  kksimg.src=selSr
   
-  selImg2.src=selSr2
+  kksimg2.src=selSr2
   
-  selImg3.src=selSr3
+  kksimg3.src=selSr3
   
-  selImg.style.display="flex"
-  selImg2.style.display="flex"
-  selImg3.style.display="flex"
+  document.querySelector('.fullimgcanopop').style.display='flex'
 }
 
 function hipog(self) {
