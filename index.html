@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase.js"></script>
+
+<script  src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2010748250289519"
+     crossorigin="anonymous"></script>
+<title>HTML</title>
+  
+  <!-- HTML -->
+  <style>
+*{
+  font-family: 'Nunito';
+}
+body {
+    font-size: 15pt;
+}
+
+.logincan{
+  width: 100%;
+  height: 100%;
+  position:fixed;
+  left:0px;
+  top: 0px;
+  background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+z-index: 10;
+}
+
+.logincan>input{
+  
+}
+
+.namecan{
+  width:70%;
+  height: 7vh;
+  background: white;
+  position: absolute;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  left:12%;
+  top: 25%;
+}
+
+.namecan>input{
+  width: 70%;
+  height:3vh;
+  outline: none;
+  border:2px solid transparent;
+  font-weight: bold;
+  border-bottom-color:#0093e9;
+  position: absolute;
+  top:2vh;
+  left:2vh;
+  background: transparent;
+  
+}
+
+.namecan>h6{
+  position: absolute;
+  left:2vh;
+  top:-4vh;
+  color: #0093e9;
+}
+
+.companycan {
+  width: 70%;
+  height: 7vh;
+  background: white;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 12%;
+  top: 35%;
+}
+
+.companycan>input {
+  width: 70%;
+  height: 3vh;
+  outline: none;
+  border: 2px solid transparent;
+  font-weight: bold;
+  border-bottom-color: #0093e9;
+  position: absolute;
+  top: 2vh;
+  left: 2vh;
+  background: transparent;
+
+}
+
+.companycan>h6 {
+  position: absolute;
+  left: 2vh;
+  top: -4vh;
+  color: #0093e9;
+}
+
+.mailcan {
+  width: 70%;
+  height: 7vh;
+  background: white;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 12%;
+  top: 45%;
+}
+
+.mailcan>input {
+  width: 70%;
+  height: 3vh;
+  outline: none;
+  border: 2px solid transparent;
+  font-weight: bold;
+  border-bottom-color: #0093e9;
+  position: absolute;
+  top: 2vh;
+  left: 2vh;
+  background: transparent;
+
+}
+
+.mailcan>h6 {
+  position: absolute;
+  left: 2vh;
+  top: -4vh;
+  color: #0093e9;
+}
+
+#emp{
+  width:30%;
+  height:6vh;
+  background: white;
+  font-weight: bold;
+  position: absolute;
+  outline: none;
+  top:55%;
+  left:12%;
+  border:1px solid black;
+}
+
+#bos{
+  width: 30%;
+  height: 6vh;
+  background: white;
+  font-weight: bold;
+  position: absolute;
+  outline: none;
+  top: 55%;
+  left: 50%;
+  border: 1px solid black;
+}
+
+#enterbtn{
+  width:70%;
+  height: 7vh;
+  position: absolute;
+  border:2px solid;
+  outline:none;
+  top:65%;
+  left:12%;
+  font-weight: bold;
+  
+       background-image: linear-gradient(to right, #D31027 0%, #EA384D  51%, #D31027  100%);
+         font-size:2.5vh;
+  color:white;
+}
+
+.header{
+  width:100%;
+  height:7vh;
+  background:#FFCC00;
+  box-shadow:0 0 3px black;
+  position:fixed;
+  top: 0px;
+  left:0px;
+  display: flex;
+  align-items: center;
+  font-size:3vh;
+}
+
+.header>div{
+  position: absolute;
+  left:5%;
+  color:white;
+}
+
+#weltxt{
+  position: absolute;
+  top:10%;
+  left:5%;
+  font-size: 3vh;
+}
+
+.buycan{
+  width:40%;
+  height:22%;
+  position: absolute;
+  border-radius: 5px;
+  position: absolute;
+  left:3%;
+  top:20%;
+  background: whitesmoke;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  
+}
+
+.buycan>h5{
+  position: absolute;
+  top:60%;
+  font-size:2vh;
+}
+
+.buycan>div{
+  font-size:5vh;
+  color: white;
+  -webkit-text-stroke:0.3vh black;
+}
+
+.sellcan{
+  width:40%;
+  height:22%;
+  position: absolute;
+  border-radius: 5px;
+  position: absolute;
+  left:57%;
+  top:20%;
+  background: whitesmoke;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  
+}
+
+.sellcan>h5{
+  position: absolute;
+  top:60%;
+  font-size:2vh;
+}
+
+.sellcan>div{
+  font-size:5vh;
+}
+
+.footer{
+  width:100%;
+  height:8vh;
+  position:fixed;
+  bottom:0;
+  background: white;
+  box-shadow: 0 0 3px black;
+  left:0%;
+}
+
+.addcan{
+  width:7vh;
+  height:7vh;
+  position: absolute;
+  background: #FFCC00;
+  border-radius: 7vh;
+  left: 42%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  top:-35%;
+  font-size:3vh;
+  
+}
+
+.fullsell{
+  width:100%;
+  height:100%;
+  position:fixed;
+  background: white;
+  top:0px;
+  left:0px;
+  display:none;
+}
+
+#titleinp{
+  position: absolute;
+  width:70%;
+  height: 5vh;
+  outline: none;
+  border:1px solid;
+  font-weight: bold;
+  border-radius: 2px;
+  top:20%;
+  left:15%;
+}
+#nminp {
+  position: absolute;
+  width: 70%;
+  height: 5vh;
+  outline: none;
+  border: 1px solid;
+  font-weight: bold;
+  border-radius: 2px;
+  top: 30%;
+  left: 15%;
+}
+#caminp {
+  position: absolute;
+  width: 70%;
+  height: 5vh;
+  outline: none;
+  border: 1px solid;
+  font-weight: bold;
+  border-radius: 2px;
+  top: 40%;
+  left: 15%;
+}
+#numinp {
+  position: absolute;
+  width: 70%;
+  height: 5vh;
+  outline: none;
+  border: 1px solid;
+  font-weight: bold;
+  border-radius: 2px;
+  top: 50%;
+  left: 15%;
+}
+#stinp {
+  position: absolute;
+  width: 70%;
+  height: 5vh;
+  outline: none;
+  border: 1px solid;
+  font-weight: bold;
+  border-radius: 2px;
+  top: 60%;
+  left: 15%;
+}
+
+.fullsell>button{
+  width:70%;
+  height: 7vh;
+  position: absolute;
+  border:2px solid;
+  outline:none;
+  top:70%;
+  left:14%;
+  font-weight: bold;
+ background: #FFCC00;
+  font-size:2.5vh;
+  color:white;
+}
+
+.fullimg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: white;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+.imgcan{
+  width:95%;
+  height:50%; 
+  position: absolute;
+  border:1px solid;
+  left:2%;
+  top:5%;
+  overflow: scroll;
+}
+
+#filebtn{
+  width:40%;
+  height:4vh;
+  background: #222222;
+  position: absolute;
+  top: 60%;
+  outline: none;
+  color: white;
+  border-radius: 3px;
+  border:none;
+  font-weight: bold;
+  left:5%;
+}
+#filebtn2{
+  width:40%;
+  height:4vh;
+  background: #222222;
+  position: absolute;
+  top: 70%;
+  outline: none;
+  color: white;
+  border-radius: 3px;
+  border:none;
+  font-weight: bold;
+  left:5%;
+}
+
+#filebtn3{
+  width:40%;
+  height:4vh;
+  background: #222222;
+  position: absolute;
+  top: 80%;
+  outline: none;
+  color: white;
+  border-radius: 3px;
+  border:none;
+  font-weight: bold;
+  left:5%;
+}
+
+#sebtn{
+  width:70%;
+  height: 6vh;
+  position: absolute;
+  border:2px solid;
+  outline:none;
+  top:90%;
+  left:14%;
+  font-weight: bold;
+  background: #FFCC00;
+  font-size:2.2vh;
+  color:white;
+  
+}
+
+#myImg{
+  width: 100%;
+  height:100%;
+  position: absolute;
+}
+
+#myImg2{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left:110%;
+}
+
+#myImg3{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left:220%;
+}
+
+#buycameraul{
+  width:100%;
+  height:100%;
+  background: white;
+  position:fixed;
+  top:-20px;
+  left:0px;
+  overflow: scroll;
+  display: none;
+}
+
+
+.card{
+  width: 90%;
+  height:35vh;
+  position: absolute;
+  background: whitesmoke;
+  box-shadow: 0 0 2px black;
+  position: relative;
+  top:10vh;
+  margin-top: 20vh;
+  left:-3vh;
+  overflow: scroll;
+}
+
+.card-img{
+  width: 100%;
+  height:150%;
+  position: absolute;
+  left:0px;
+  top:-45px;
+  z-index: 100;
+  display:none;
+}
+.card-img2 {
+  width: 100%;
+  height: 150%;
+  position: absolute;
+  left: 100%;
+  top: -45px;
+  z-index: 100;
+  display: none;
+}
+.card-img3 {
+  width: 100%;
+  height: 150%;
+  position: absolute;
+  left: 200%;
+  top: -45px;
+  z-index: 100;
+  display: none;
+}
+
+#nametxt{
+  position: absolute;
+  left:3vh;
+  top:1vh;
+  font-size: 1vh;
+}
+
+#camtxt{
+  position: absolute;
+  left:4vh;
+  top:5vh;
+}
+
+#ptxt{
+  position: absolute;
+  top: 10vh;
+  left:5vh;
+  color: mediumseagreen;
+}
+
+.notxt{
+  position: absolute;
+  top:14vh;
+  left:2vh;
+}
+
+.pogbtn{
+  width: 40%;
+  height:5vh;
+  position: absolute;
+  outline: none;
+  background:#FFCC00;
+  top:24vh;
+  left:27vh;
+  color:white;
+  border:none;
+  font-weight: bold;
+}
+
+.buybtn {
+  width: 40%;
+  height: 5vh;
+  position: absolute;
+  outline: none;
+  background: white;
+  top: 24vh;
+  left: 3vh;
+  color: black;
+  border: none;
+  font-weight: bold;
+}
+
+.sw{
+  width:95%;
+  height: 30%;
+  position: absolute;
+  top: 50%;
+  background: whitesmoke;
+  font-size: 2vh;
+  z-index: -1;
+}
+
+.sw>button{
+  width:50%;
+  height: 5vh;
+  position: absolute;
+  outline: none;
+  background: #FFCC00;
+  border:1px solid;
+  border-radius: 4px;
+  top:70%;
+  left:10%;
+font-weight:bold;
+color:white;
+font-size: 2vh;
+}
+
+#hiretxt{
+  position: fixed;
+  font-size: 1vh;
+  left:12%;
+  top:85%;
+}
+
+.fullnav{
+  width:60%;
+  height: 101%;
+  position: absolute;
+  box-shadow: 0 0 3px black;
+  background: white;
+  left:0px;
+  top:-10px;
+  display:none;
+  
+}
+
+.fullnav>h4{
+  
+}
+
+#bktxt{
+  position: absolute;
+  top:10%;
+  left:20%;
+}
+
+#seltxt {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+}
+
+#apotxt {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+}
+
+#lgtxt {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+.chlang{
+  width:100%;
+  height:100%;
+  position: fixed;
+  left:0px;
+  top:0px;
+  background: linear-gradient(#ee0979,#ff6a00);
+}
+
+.langcan{
+  width:35%;
+  height: 30%;
+  position: absolute;
+  background: white;
+  border-radius: 5px;
+  top:30%;
+  left:30%;
+}
+
+#eng{
+  position: absolute;
+  left:31%;
+}
+
+#hin{
+  position: absolute;
+  left:40%;
+  top:20%;
+}
+
+#rj {
+  position: absolute;
+  left: 37%;
+  top: 40%;
+}
+
+#pn {
+  position: absolute;
+  left: 35%;
+  top: 60%;
+}
+
+#chtxt{
+  color:white;
+  position: absolute;
+  top:5%;
+  left:5%;
+}
+
+
+</style>
+<meta name="google-site-verification" content="Zx11haJCTSt8_GNFokbwsR4oLth_db_d_IyO8FkJKcU" />
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="logincan">
+    <div class="namecan">
+      <h6>Name</h6>
+    <input id="nameinput">
+    </div>
+    <div class="companycan">
+      <h6>Studio</h6>
+    <input id="companyinput">
+    </div>
+   <div class="mailcan">
+     <h6>Mobile Number</h6>
+    <input id="mailinput"type="number">
+    </div>
+    <button id="emp">I Am Photographer</button>
+    <button id="bos">I Am Camera Seller</button>
+    <button id="enterbtn"onclick="ent()">Enter</button>
+    </div>
+
+  </div>
+  
+  <div class="header">
+    <div class="fa fa-bars"onclick="shnav()"></div>
+  </div>
+  <h4 id="weltxt">Welcome Bro</h4>
+  
+  <div class="buycan" onclick="document.getElementById('buycameraul').style.display='block'">
+    <div class="fa fa-camera"></div>
+    <h5 id="b1">Buy Camera</h5>
+  </div>
+  
+  <div class="sellcan"onclick="shipog()">
+    <div class="fa fa-credit-card"></div>
+    <h5 id="b2">Sell Camera</h5>
+  </div>
+  
+  <div class="footer">
+    <div class="addcan">
+      <div class="fa fa-plus"onclick="ta()"></div>
+    </div>
+  </div>
+  
+  <div class="fullsell">
+    <input id="titleinp"placeholder="Enter Price In ₹"type="number">
+    <input id="nminp"placeholder="Enter Your Name">
+    <input id="caminp"placeholder="Enter Camera Name">
+    <input id="numinp"placeholder="Enter Your Mobile Number"type="number">
+    <input id="stinp"placeholder="Enter Your Studio Address">
+    <button onclick="nx()">Next</button>
+  </div>
+  <div class="fullimg">
+    <div class="imgcan">
+      <img id="myImg">
+      <img id="myImg2">
+      <img id="myImg3">
+    </div>
+    <button id="filebtn">Choose Image</button>
+        <button id="filebtn2">Choose 2 Image</button>
+            <button id="filebtn3">Choose 3 Image</button>
+    <button id="sebtn"onclick="yeh()">Submit</button>
+    <h1 id="output"></h1>
+    
+  </div>
+  
+  <div class="sw">
+    <h5 id="aptxt">Take Appointment For Swastik 
+    Camera Repair Center Best Camera
+    Repair Center At Very Low Prices
+    We Repair Many Types Of Camera In Hisar Near Talaki Gate.You Will Definitely Like Our Services If You Will Come.It's better to repair your camera at our center.Get 10₹ Cashback At Your First Appointment.</h5>
+    <button onclick="ta()"id="yeetpog">Take Appointment</button>
+  </div>
+  <h5 id="hiretxt">If You Want To Make Your Website Contact Me 8221960604.©KKS FOUNDATION</h5>
+  
+  <div class="fullnav"ontouchmove="cl()">
+    <h5 id="bktxt" onclick="document.getElementById('buycameraul').style.display='block'">Buy Camera</h5>
+       <h5 id="seltxt"onclick="shipog()">Sell Camera</h5>
+       <h5 id="apotxt"onclick="ta()">Take Appointment</h5>
+    <h5 id="lgtxt"onclick="lg()">Log Out</h5>
+  </div>
+  
+  <div class="chlang">
+   <h2 id="chtxt">Choose Language</h2>
+    <div class="langcan">
+      <h5 id="eng"onclick="nw()">English</h5>
+      <h5 id="hin"onclick="sehin()">हिंदी</h5>
+      <h5 id="rj"onclick="serj()">પસાર</h5>
+      <h5 id="pn"onclick="sepn()">ਪੰਜਾਬੀ</h5>
+    </div>
+  </div>
+  <ul id="buycameraul">
+    <div class="fa fa-chevron-left"style="font-size:3vh; position: absolute;top:5vh;left:3vh;"onclick="document.getElementById('buycameraul').style.display='none'"></div>
+    
+  </ul>
+  <!-- Project -->
+  <script>
+const firebaseConfig = {
+  apiKey: "AIzaSyDDfz_poZ2Qza9vdT5hpyByNSxsXrbpstE",
+  authDomain: "cactus-appop.firebaseapp.com",
+  projectId: "cactus-appop",
+  storageBucket: "cactus-appop.appspot.com",
+  messagingSenderId: "818916203410",
+  appId: "1:818916203410:web:d1e013b61c0d6f153eff4b",
+  measurementId: "G-V6T9FMWQJK"
+};
+
+// Initialize Firebase
+
+firebase.initializeApp(firebaseConfig);
+function ent(){
+  var name=nameinput.value.length
+  var company=companyinput.value.length
+  var mail=mailinput.value.length
+  
+  
+  
+    var name = nameinput.value
+    var company = companyinput.value
+    var mail = mailinput.value
+    localStorage.setItem("name",name)
+    localStorage.setItem("company",company)
+    localStorage.setItem("mail",mail)
+    if (typeof(Storage) !== "undefined") {
+    if (localStorage.sethide) {
+  
+      if (localStorage.sethide === "none")
+        localStorage.sethide = "flex";
+      else
+        localStorage.sethide = "none";
+    } else {
+      localStorage.sethide = "none";
+    }
+    document.querySelector(".logincan").style.display = localStorage.sethide;
+  
+  }
+}
+
+function sehin(){
+  
+  
+    document.querySelector(".chlang").style.display = localStorage.sethide2;
+    var apitxt=aptxt.innerHTML
+ aptxt.innerHTML= " स्वास्तिक के लिए अपॉइंटमेंट लें कैमरा मरम्मत केंद्र सर्वश्रेष्ठ कैमरा बहुत कम दामों पर मरम्मत केंद्र हम हिसार में तालाकी गेट के पास कई प्रकार के कैमरे की मरम्मत करते हैं। यदि आप आएंगे तो आपको हमारी सेवाएं निश्चित रूप से पसंद आएंगी। हमारे केंद्र में अपने कैमरे की मरम्मत करना बेहतर है। अपनी पहली नियुक्ति पर 10 रुपये कैशबैक प्राप्त करें। "  
+ var yeetipog=yeetpog.innerHTML
+ yeetpog.innerHTML="अपॉइंटमेट लें "
+var hireitxt=hiretxt.innerHTML
+hiretxt.innerHTML="अगर आप चाहते हैं कि हम आपकी वेबसाइट बनाएं तो मुझसे संपर्क  करें8 2 2 1 9 6 0 6 0 4© केकेएस फाउंडेशन"  
+var b2i=b2.innerHTML
+b2.innerHTML=" कैमरा बेचें "
+ var b1i=b1.innerHTML
+ b1.innerHTML=" कैमरा खरीदें "
+
+  localStorage.setItem("apitxt", apitxt)
+  localStorage.setItem("yeetipog", yeetipog)
+  localStorage.setItem("hireitxt", hireitxt)
+  localStorage.setItem("b1i", b1i)
+  localStorage.setItem("b2i",b2i)
+  }
+ 
+  
+
+
+function sepn(){
+  
+    
+    document.querySelector(".chlang").style.display = localStorage.sethide2;
+    var apitxt=aptxt.innerHTML
+ aptxt.innerHTML= " ਸਵਾਸਤਿਕ ਕੈਮਰਾ ਮੁਰੰਮਤ ਕੇਂਦਰ ਲਈ ਨਿਯੁਕਤੀ ਕਰੋ ਬਹੁਤ ਘੱਟ ਕੀਮਤ 'ਤੇ ਵਧੀਆ ਕੈਮਰਾ ਮੁਰੰਮਤ ਕੇਂਦਰ ਅਸੀਂ ਹਿਸਾਰ ਦੇ ਤਲਕੀ ਗੇਟ ਦੇ ਨੇੜੇ ਵੱਖ-ਵੱਖ ਤਰ੍ਹਾਂ ਦੇ ਕੈਮਰੇ ਦੀ ਮੁਰੰਮਤ ਕਰਦੇ ਹਾਂ। ਜੇਕਰ ਤੁਸੀਂ ਆਓਗੇ ਤਾਂ ਤੁਹਾਨੂੰ ਸਾਡੀਆਂ ਸੇਵਾਵਾਂ ਜ਼ਰੂਰ ਪਸੰਦ ਆਉਣਗੀਆਂ। ਸਾਡੇ ਕੇਂਦਰ ਵਿੱਚ ਆਪਣੇ ਕੈਮਰੇ ਦੀ ਮੁਰੰਮਤ ਕਰਵਾਉਣਾ ਬਿਹਤਰ ਹੈ। ਆਪਣੀ ਪਹਿਲੀ ਮੁਲਾਕਾਤ 'ਤੇ 10 ਰੁਪਏ ਦਾ ਕੈਸ਼ਬੈਕ ਪ੍ਰਾਪਤ ਕਰੋाप्त करें। "  
+ var yeetipog=yeetpog.innerHTML
+ yeetpog.innerHTML=" ਮਿਲਨ ਦਾ ਵਕ਼ਤ ਨਿਸਚੇਯ ਕਰੋ "
+var hireitxt=hiretxt.innerHTML
+hiretxt.innerHTML="ਮੇਰੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ ਜੇਕਰ ਤੁਸੀਂ ਚਾਹੁੰਦੇ ਹੋ ਕਿ ਅਸੀਂ ਤੁਹਾਡੀ ਵੈਬਸਾਈਟ ਬਣਾਈਏ 8 2 2 1 6 0 6 0 4 © KKS ਫਾਊਂਡੇਸ਼ਨडेशन"  
+var b2i=b2.innerHTML
+b2.innerHTML=" ਕੈਮਰਾ ਵੇਚੋेचें "
+ var b1i=b1.innerHTML
+ b1.innerHTML=" ਕੈਮਰਾ ਖਰੀਦਦਾਰੀ "
+
+  localStorage.setItem("apitxt", apitxt)
+  localStorage.setItem("yeetipog", yeetipog)
+  localStorage.setItem("hireitxt", hireitxt)
+  localStorage.setItem("b1i", b1i)
+  localStorage.setItem("b2i",b2i)
+  }
+  
+ 
+  
+
+function serj() {
+  
+  
+      
+    document.querySelector(".chlang").style.display = localStorage.sethide2;
+    var apitxt = aptxt.innerHTML
+  aptxt.innerHTML = " સ્વસ્તિક કેમેરા રિપેર સેન્ટર માટે એપોઇન્ટમેન્ટ લો ખૂબ જ ઓછી કિંમતે શ્રેષ્ઠ કેમેરા રિપેર સેન્ટર અમે હિસારમાં તલાકી ગેટ પાસે વિવિધ પ્રકારના કેમેરા રિપેર કરીએ છીએ. જો તમે આવશો તો તમને અમારી સેવાઓ ચોક્કસ ગમશે. તમારા કૅમેરાને અમારા કેન્દ્રમાં રિપેર કરાવવું વધુ સારું છે. તમારી પ્રથમ મુલાકાત પર રૂ.10 કેશબેક મેળવોरें। "
+  var yeetipog = yeetpog.innerHTML
+  yeetpog.innerHTML = " એપોઈન્ટમેન્ટ લોછેੋ "
+  var hireitxt = hiretxt.innerHTML
+  hiretxt.innerHTML = "જો તમે ઇચ્છતા હોવ કે અમે તમારી વેબસાઇટ બનાવીએ તો મારો સંપર્ક કરો 8 2 2 1 6 0 6 0 4 © KKS ફાઉન્ડેશનडेशन"
+  var b2i = b2.innerHTML
+  b2.innerHTML = " કેમેરા વેચો "
+  var b1i = b1.innerHTML
+  b1.innerHTML = " કૅમેરો ખરીદોਾਰੀ "
+
+  localStorage.setItem("apitxt", apitxt)
+  localStorage.setItem("yeetipog", yeetipog)
+  localStorage.setItem("hireitxt", hireitxt)
+  localStorage.setItem("b1i", b1i)
+  localStorage.setItem("b2i", b2i)
+
+  }
+
+  
+
+function nw(){
+  
+    document.querySelector(".chlang").style.display = localStorage.sethide2;
+    var apitxt = aptxt.innerHTML
+  aptxt.innerHTML = " Take Appointment For Swastik Camera Repair.Best Camera Repair Center.। "
+  var yeetipog = yeetpog.innerHTML
+  yeetpog.innerHTML = " Take Appointment "
+  var hireitxt = hiretxt.innerHTML
+  hiretxt.innerHTML = "8221960604"
+  var b2i = b2.innerHTML
+  b2.innerHTML = " Sell Camera "
+  var b1i = b1.innerHTML
+  b1.innerHTML = "Buy Camera "
+
+  localStorage.setItem("apitxt", apitxt)
+  localStorage.setItem("yeetipog", yeetipog)
+  localStorage.setItem("hireitxt", hireitxt)
+  localStorage.setItem("b1i", b1i)
+  localStorage.setItem("b2i", b2i)
+  }
+  
+
+  
+
+window.onload=function (){
+  var name = localStorage.getItem("name")
+  var company = localStorage.getItem("company")
+  var mail = localStorage.getItem("mail")
+  weltxt.innerHTML="Welcome "+name
+  localStorage.getItem("apitxt")
+  localStorage.getItem("yeetipog")
+  localStorage.getItem("hireitxt")
+  localStorage.getItem("b1i")
+ var a2= localStorage.getItem("b2i")
+  var a1= localStorage.getItem("b1i")
+  var a3= localStorage.getItem("apitxt")
+  var a4= localStorage.getItem("yeetipog")
+  var a5= localStorage.getItem("hireitxt")
+  b2.innerHTML=a2
+  aptxt.innerHTML=a3
+  yeetpog.innerHTML=a4
+  b1.innerHTML=a1
+  hiretxt.innerHTML=a5
+  if(weltxt.innerHTML=="Welcome null"){
+    weltxt.innerHTML="Welcome"
+  }
+  if (typeof(Storage) !== "undefined") {
+    document.querySelector(".logincan").style.display = localStorage.sethide;
+  
+  
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+  
+  
+}
+
+var main = document.querySelector("#filebtn").onclick = function(e) {
+  var input = document.createElement("input")
+  input.type = "file"
+  input.onchange = e => {
+    files = e.target.files;
+    reader = new FileReader()
+    reader.onload = function() {
+      var myImg=document.getElementById("myImg").src = reader.result;
+      
+      
+      
+      
+    }
+    reader.readAsDataURL(files[0])
+   
+  }
+
+  input.click()
+  
+
+}
+var main2 = document.querySelector("#filebtn2").onclick = function(e) {
+  var input = document.createElement("input")
+  input.type = "file"
+  input.onchange = e => {
+    files = e.target.files;
+    reader = new FileReader()
+    reader.onload = function() {
+      var myImg2=document.getElementById("myImg2").src = reader.result;
+      
+      
+      
+      
+    }
+    reader.readAsDataURL(files[0])
+   
+  }
+
+  input.click()
+  
+
+}
+var main3 = document.querySelector("#filebtn3").onclick = function(e) {
+  var input = document.createElement("input")
+  input.type = "file"
+  input.onchange = e => {
+    files = e.target.files;
+    reader = new FileReader()
+    reader.onload = function() {
+      var myImg3=document.getElementById("myImg3").src = reader.result;
+      
+      
+      
+      
+    }
+    reader.readAsDataURL(files[0])
+   
+  }
+
+  input.click()
+  
+
+}
+
+function shipog(){
+  document.querySelector(".fullsell").style.display="flex"
+  
+   document.querySelector('.fullnav').style.display='none'
+}
+
+
+function nx(){
+  if(titleinp.value.length<3){
+    alert("Please Enter Atleast 3words")
+  }else{
+    document.querySelector(".fullimg").style.display="flex"
+  }
+}
+
+function yeh(){
+   document.querySelector('.fullnav').style.display='none'
+   var price = document.getElementById('titleinp').value
+   var name = document.getElementById('nminp').value
+   var cam = document.getElementById('caminp').value
+   var num = document.getElementById('numinp').value
+   var pogimg=document.getElementById("myImg").src
+     var pogimg2=document.getElementById("myImg2").src
+       var pogimg3=document.getElementById("myImg3").src
+     firebase.database().ref("allcam").push().set({
+       "name":name,
+       "price":price,
+       "cam":cam,
+       "num":num,
+       "camimg":pogimg,
+       "camimg2":pogimg2,
+       "camimg3":pogimg3
+     })
+   document.querySelector(".fullimg").style.display="none"
+   document.querySelector(".fullsell").style.display="none"
+   document.querySelector(".done-box").style.display="flex"
+   
+   setTimeout (function(){
+     document.querySelector(".done-box").style.display="none"
+     alert("Congratulations Your Camera Has Been Uploaded Now If Any Person Will Intrested In Your Camera He Or She Will Contact You.🤩🥳 Hindi: बधाई हो आपका कैमरा अब अपलोड हो गया है अगर कोई व्यक्ति आपके कैमरे में दिलचस्पी लेगा तो वह आपसे संपर्क करेग")
+   },8000)
+   
+}
+
+firebase.database().ref("allcam").on("child_added", function(snapshot) {
+
+
+  var html = `
+            <div class="card">
+        <h5 id="nametxt">${snapshot.val().name}</h5>
+        <h3 id="camtxt">${snapshot.val().cam}</h3>
+        <h5 id="ptxt">${snapshot.val().price}₹</h5>
+        <h5 id=${snapshot.key} class="notxt">${snapshot.val().num}</h5>
+        <button id=${snapshot.key} class="pogbtn"onclick="shpog(this)">See Camera Image</button>
+                <button id=${snapshot.key} class="buybtn" onclick="cal(this)">Buy Now</button>
+        
+        <img id=${snapshot.key} alt='No Image' onclick="hipog(this)"  class="card-img"/>
+         <img id=${snapshot.key} alt='No Image' onclick="hipog2(this)"  class="card-img2"/>
+          <img id=${snapshot.key} alt='No Image' onclick="hipog3(this)"  class="card-img3"/>
+        <h3 id=${snapshot.key} class="srtxt" style="display:none;">${snapshot.val().camimg}</h3>
+                <h3 id=${snapshot.key} class="srtxt2" style="display:none;">${snapshot.val().camimg2}</h3>
+                        <h3 id=${snapshot.key} class="srtxt3" style="display:none;">${snapshot.val().camimg3}</h3>
+                        
+        </div>
+        `
+  
+  var places = document.getElementById("buycameraul")
+  places.innerHTML = html + places.innerHTML;
+
+
+});
+
+function cal(self){
+  var selNo = self.parentElement.querySelector('.notxt').innerHTML
+  
+  window.open("tel: +91"+selNo)
+}
+
+function shpog(self){
+  var selImg = self.parentElement.querySelector('.card-img')
+  
+  var selSr= self.parentElement.querySelector('.srtxt').innerHTML
+  
+  var selImg2 = self.parentElement.querySelector('.card-img2')
+  
+  var selSr2 = self.parentElement.querySelector('.srtxt2').innerHTML
+  
+  var selImg3 = self.parentElement.querySelector('.card-img3')
+  
+  
+  
+  var selSr3 = self.parentElement.querySelector('.srtxt3').innerHTML
+  
+  selImg.src=selSr
+  
+  selImg2.src=selSr2
+  
+  selImg3.src=selSr3
+  
+  selImg.style.display="flex"
+  selImg2.style.display="flex"
+  selImg3.style.display="flex"
+}
+
+function hipog(self) {
+  var selImg = self.parentElement.querySelector('.card-img')
+
+  selImg.style.display = 'none'
+  
+  
+}
+function hipog2(self) {
+  var selImg = self.parentElement.querySelector('.card-img2')
+  
+  selImg.style.display = 'none'
+
+  
+}
+function hipog3(self) {
+  var selImg = self.parentElement.querySelector('.card-img3')
+  
+  selImg.style.display = 'none'
+
+  
+}
+function ta(){
+ document.querySelector('.fullnav').style.display='none'
+  var name=prompt("Please Enter Your Name")
+  var mn=prompt("Please Enter Your Mobile Number")
+  var t=prompt("Please Enter Date With Month And Year On Which You Want To Come")
+  
+  
+    
+  
+    alert("Appointment Booked -) We Will Call You When You Have To Come. Thanks For Booking.Have A Wonderful Day.")
+    firebase.database().ref("ap").push().set({
+      "nameap": name,
+      "nm": mn,
+      "time": t
+    })
+   var ly= yeetpog.innerHTML="Booked"
+    localStorage.setItem("ly",ly)
+    yeetpog.onclick = function() {
+      alert("Already Booked We Will Contact You When You Have To Come")
+    }
+    
+    
+  
+}
+
+function shnav(){
+  document.querySelector('.fullnav').style.display='flex'
+}
+
+function lg(){
+  document.querySelector(".logincan").style.display="flex"
+  document.querySelector('.fullnav').style.display='none'
+  var name = nameinput.value=""
+  var company = companyinput.value=""
+  var mail = mailinput.value=""
+  
+  document.querySelector(".chlang").style.display ="flex"
+}
+
+function cl(){
+  document.querySelector('.fullnav').style.display='none'
+}
+
+function yot(){
+  var sval=searcheng.value.toUpperCase()
+  var places = document.getElementById("buycameraul")
+  var w=places.getElementsByTagName("h3")
+  
+  if(sval.value="xyz"){
+    console.log(w)
+  }
+}
+
+  </script>
+</body>
+</html>
