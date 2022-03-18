@@ -995,10 +995,7 @@ window.onload=function (){
 }
 
 var main = document.querySelector("#filebtn").onchange = function(e) {
-  var input = document.createElement("input")
-  input.type = "file"
-  
-  input.onchange = e => {
+ 
     files = e.target.files;
     reader = new FileReader()
     reader.onload = function() {
@@ -1012,18 +1009,15 @@ var main = document.querySelector("#filebtn").onchange = function(e) {
    
   }
 
-  input.click()
+  
   
 
-}
+
 var main2 = document.querySelector("#filebtn2").onchange = function(e) {
-  var input = document.createElement("input")
-  input.type = "file"
-  input.onchange = e => {
-    files = e.target.files;
+  files = e.target.files;
     reader = new FileReader()
     reader.onload = function() {
-      var myImg2=document.getElementById("myImg2").src = reader.result;
+      var myImg=document.getElementById("myImg").src = reader.result;
       
       
       
@@ -1033,18 +1027,15 @@ var main2 = document.querySelector("#filebtn2").onchange = function(e) {
    
   }
 
-  input.click()
+  
   
 
-}
+
 var main3 = document.querySelector("#filebtn3").onchange = function(e) {
-  var input = document.createElement("input")
-  input.type = "file"
-  input.onchange = e => {
-    files = e.target.files;
+  files = e.target.files;
     reader = new FileReader()
     reader.onload = function() {
-      var myImg3=document.getElementById("myImg3").src = reader.result;
+      var myImg=document.getElementById("myImg").src = reader.result;
       
       
       
@@ -1054,10 +1045,10 @@ var main3 = document.querySelector("#filebtn3").onchange = function(e) {
    
   }
 
-  input.click()
+  
   
 
-}
+
 
 function shipog(){
   document.querySelector(".fullsell").style.display="flex"
