@@ -1138,10 +1138,7 @@ firebase.database().ref("allcam").on("child_added", function(snapshot) {
                 <button id=${snapshot.key} class="buybtn" onclick="cal(this)">Buy Now</button>
         
       
-        <h3 id=${snapshot.key} class="srtxt" style="display:none;">${snapshot.val().camimg}</h3>
-                <h3 id=${snapshot.key} class="srtxt2" style="display:none;">${snapshot.val().camimg2}</h3>
-                        <h3 id=${snapshot.key} class="srtxt3" style="display:none;">${snapshot.val().camimg3}</h3>
-                        
+       
         </div>
         `
   
