@@ -792,9 +792,9 @@ font-size: 2vh;
     <h1 id="output"></h1>
     
   </div>
-  <input id="lolin">
-  <input id="lolin2">
-  <input id="lolin3">
+  <input id="lolin"name='files[]'>
+  <input id="lolin2"name='files[]'>
+  <input id="lolin3"name='files[]'>
   <div class="sw">
     <h5 id="aptxt">Take Appointment For Swastik 
     Camera Repair Center Best Camera
@@ -1017,13 +1017,11 @@ document.getElementById('filebtn').onchange = function (evt) {
             lolin.value=fr.result
         }
         fr.readAsDataURL(files[0]);
-    }
-
-    // Not supported
-    else {
+      }
+ 
         // fallback -- perhaps submit the input to an iframe and temporarily store
         // them on the server until the user's session ends.
-    }
+    
 }
 
   
@@ -1040,13 +1038,11 @@ document.getElementById('filebtn2').onchange = function (evt) {
             lolin2.value=fr.result
         }
         fr.readAsDataURL(files[0]);
+
+      
     }
 
-    // Not supported
-    else {
-        // fallback -- perhaps submit the input to an iframe and temporarily store
-        // them on the server until the user's session ends.
-    }
+   
 }
 
 
@@ -1064,15 +1060,10 @@ document.getElementById('filebtn3').onchange = function (evt) {
             lolin3.value=fr.result
         }
         fr.readAsDataURL(files[0]);
-    }
 
-    // Not supported
-    else {
-        // fallback -- perhaps submit the input to an iframe and temporarily store
-        // them on the server until the user's session ends.
-    }
+       
 }
-
+}
 
 
   
@@ -1098,9 +1089,9 @@ function yeh(){
    var name = document.getElementById('nminp').value
    var cam = document.getElementById('caminp').value
    var num = document.getElementById('numinp').value
-   var pogimg=document.getElementById("lolin").value
-     var pogimg2=document.getElementById("lolin2").value
-       var pogimg3=document.getElementById("lolin3").value
+   var pogimg=document.getElementById("lolin")
+     var pogimg2=document.getElementById("lolin2")
+       var pogimg3=document.getElementById("lolin3")
     
     var db=firebase.database()
        db.ref("allcam").push().set({
@@ -1108,9 +1099,9 @@ function yeh(){
        "price":price,
        "cam":cam,
        "num":num,
-       "camimg":pogimg,
-       "camimg2":pogimg2,
-       "camimg3":pogimg3
+       "camimg":pogimg.value,
+       "camimg2":pogimg2.value,
+       "camimg3":pogimg3.value
      })
 
 
@@ -1137,7 +1128,10 @@ firebase.database().ref("allcam").on("child_added", function(snapshot) {
         <button id=${snapshot.key} class="pogbtn"onclick="shpog(this)">See Camera Image</button>
                 <button id=${snapshot.key} class="buybtn" onclick="cal(this)">Buy Now</button>
         
-      
+                <h3 id=${snapshot.key} class="srtxt" style="display:none;">${snapshot.val().camimg}</h3>
+                <h3 id=${snapshot.key} class="srtxt2" style="display:none;">${snapshot.val().camimg2}</h3>
+                        <h3 id=${snapshot.key} class="srtxt3" style="display:none;">${snapshot.val().camimg3}</h3>
+
        
         </div>
         `
