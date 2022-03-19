@@ -1089,19 +1089,38 @@ function yeh(){
    var name = document.getElementById('nminp').value
    var cam = document.getElementById('caminp').value
    var num = document.getElementById('numinp').value
-   var pogimg=document.getElementById("lolin")
-     var pogimg2=document.getElementById("lolin2")
-       var pogimg3=document.getElementById("lolin3")
+   var pogimg=document.getElementById("lolin").value
+     var pogimg2=document.getElementById("lolin2").value
+       var pogimg3=document.getElementById("lolin3").value
     
+       var data = [
+    {
+        image: pogimg,
+        
+    },
+  ]
+  var data2 = [
+    {
+        image: pogimg2,
+        
+    },
+  ]
+
+  var data3 = [
+    {
+        image: pogimg3,
+        
+    },
+  ]
     var db=firebase.database()
        db.ref("allcam").push().set({
        "name":name,
        "price":price,
        "cam":cam,
        "num":num,
-       "camimg":pogimg.value,
-       "camimg2":pogimg2.value,
-       "camimg3":pogimg3.value
+       "camimg":data,
+       "camimg2":data2,
+       "camimg3":data3
      })
 
 
