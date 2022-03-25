@@ -6,14 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase.js"></script>
 
-<script  src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 <link href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" rel="stylesheet"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2010748250289519"
-     crossorigin="anonymous"></script>
+  
 <title>HTML</title>
   
   <!-- HTML -->
@@ -727,6 +726,7 @@ font-size: 2vh;
 <meta name="google-site-verification" content="Zx11haJCTSt8_GNFokbwsR4oLth_db_d_IyO8FkJKcU" />
   <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
+  <script src="bundle.js"></script>
 </head>
 
 <body>
@@ -825,9 +825,9 @@ font-size: 2vh;
     
   </ul>
   <div class="fullimgcanopop">
-    <a href="big.jpg"><img id="kksimg"></a>
-    <a href="big.jpg"><img id="kksimg2"></a>
-    <a href="big.jpg"><img id="kksimg3"></a>
+    <img id="kksimg"></img>
+    <img id="kksimg2"></img>
+    <img id="kksimg3"></img>
   </div>
   <!-- Project -->
   <script>
@@ -1005,9 +1005,14 @@ window.onload=function (){
   
 }
 
+
+
 document.getElementById('filebtn').onchange = function (evt) {
     var tgt = evt.target || window.event.srcElement,
         files = tgt.files;
+    
+
+
 
     // FileReader support
     if (FileReader && files && files.length) {
@@ -1092,35 +1097,25 @@ function yeh(){
    var pogimg=document.getElementById("lolin").value
      var pogimg2=document.getElementById("lolin2").value
        var pogimg3=document.getElementById("lolin3").value
-    
-       var data = [
-    {
-        image: pogimg,
-        
-    },
-  ]
-  var data2 = [
-    {
-        image: pogimg2,
-        
-    },
-  ]
+    var dataimage=[
+      pogimg
+    ]
+    var dataimage2=[
+      pogimg2
+    ]
+    var dataimage3=[
+      pogimg3
+    ]
 
-  var data3 = [
-    {
-        image: pogimg3,
-        
-    },
-  ]
     var db=firebase.database()
        db.ref("allcam").push().set({
        "name":name,
        "price":price,
        "cam":cam,
        "num":num,
-       "camimg":data,
-       "camimg2":data2,
-       "camimg3":data3
+       "camimg":dataimage,
+       "camimg2":dataimage2,
+       "camimg3":dataimage3
      })
 
 
