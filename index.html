@@ -1097,15 +1097,15 @@ function yeh(){
    var pogimg=document.getElementById("lolin").value
      var pogimg2=document.getElementById("lolin2").value
        var pogimg3=document.getElementById("lolin3").value
-    var dataimage=[
-      pogimg
-    ]
-    var dataimage2=[
-      pogimg2
-    ]
-    var dataimage3=[
-      pogimg3
-    ]
+    var dataimage={
+      src:pogimg
+    }
+    var dataimage2={
+      src:pogimg2
+    }
+    var dataimage3={
+      src:pogimg3
+    }
 
     var db=firebase.database()
        db.ref("allcam").push().set({
@@ -1113,9 +1113,9 @@ function yeh(){
        "price":price,
        "cam":cam,
        "num":num,
-       "camimg":dataimage,
-       "camimg2":dataimage2,
-       "camimg3":dataimage3
+       "camimg":dataimage.src,
+       "camimg2":dataimage2.src,
+       "camimg3":dataimage3.src
      })
 
 
