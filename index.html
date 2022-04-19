@@ -1089,16 +1089,11 @@ function nx(){
 }
 
 function yeh(){
-   document.querySelector('.fullnav').style.display='none'
-   var price = document.getElementById('titleinp').value
-   var name = document.getElementById('nminp').value
-   var cam = document.getElementById('caminp').value
-   var num = document.getElementById('numinp').value
-   var pogimg=document.getElementById("lolin").value
+  var pogimg=document.getElementById("lolin").value
      var pogimg2=document.getElementById("lolin2").value
        var pogimg3=document.getElementById("lolin3").value
     var dataimage={
-      src:pogimg
+      src:'div'+pogimg
     }
     var dataimage2={
       src:pogimg2
@@ -1106,8 +1101,15 @@ function yeh(){
     var dataimage3={
       src:pogimg3
     }
+    
+  document.querySelector('.fullnav').style.display='none'
+   var price = document.getElementById('titleinp').value
+   var name = document.getElementById('nminp').value
+   var cam = document.getElementById('caminp').value
+   var num = document.getElementById('numinp').value
+ 
 
-    var db=firebase.database()
+    var db=firebase.database() 
        db.ref("allcam").push().set({
        "name":name,
        "price":price,
@@ -1131,8 +1133,9 @@ function yeh(){
 }
 
 firebase.database().ref("allcam").on("child_added", function(snapshot) {
-
-
+var db=firebase.database()
+ 
+  
   var html = `
             <div class="card">
         <h5 id="nametxt">${snapshot.val().name}</h5>
@@ -1177,13 +1180,17 @@ function shpog(self){
   
   var selSr3 = self.parentElement.querySelector('.srtxt3').innerHTML
   
-  kksimg.src=selSr
+ 
+  document.querySelector('.fullimgcanopop').style.display='flex'
+var selSrAr={
+  'hippo':selSr.replace('div','')
+}
+  kksimg.src=selSrAr.hippo
   
   kksimg2.src=selSr2
   
   kksimg3.src=selSr3
   
-  document.querySelector('.fullimgcanopop').style.display='flex'
 }
 
 function hipog(self) {
