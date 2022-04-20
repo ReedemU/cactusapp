@@ -1116,8 +1116,7 @@ function yeh(){
        "cam":cam,
        "num":num,
        "camimg":dataimage.src,
-       "camimg2":dataimage2.src,
-       "camimg3":dataimage3.src
+      
      })
 
 
@@ -1146,9 +1145,7 @@ var db=firebase.database()
                 <button id=${snapshot.key} class="buybtn" onclick="cal(this)">Buy Now</button>
         
                 <h3 id=${snapshot.key} class="srtxt" style="display:none;">${snapshot.val().camimg}</h3>
-                <h3 id=${snapshot.key} class="srtxt2" style="display:none;">${snapshot.val().camimg2}</h3>
-                        <h3 id=${snapshot.key} class="srtxt3" style="display:none;">${snapshot.val().camimg3}</h3>
-
+              
        
         </div>
         `
@@ -1172,14 +1169,13 @@ function shpog(self){
   
   var selImg2 = self.parentElement.querySelector('.card-img2')
   
-  var selSr2 = self.parentElement.querySelector('.srtxt2').innerHTML
+ 
   
   var selImg3 = self.parentElement.querySelector('.card-img3')
   
   
   
-  var selSr3 = self.parentElement.querySelector('.srtxt3').innerHTML
-  
+ 
  
   document.querySelector('.fullimgcanopop').style.display='flex'
 var selSrAr={
